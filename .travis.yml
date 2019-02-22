@@ -1,13 +1,24 @@
 language: node_js
-
-node_js: '10.15.1'
-
-cache: yarn
-
-before_install:
-  - sudo apt-get update
-  - sudo apt-get install -y libxml2-dev
-
+node_js:
+  - node
+  - 10
+  - 8
+cache: npm
+install:
+  - npm install
+  - npm install -g codecov
 script:
-  - yarn test
-  - yarn lint
+  - npm run lint
+  - npm run test
+  - codecov
+branches:
+  except:
+    - '/^v\d+\.\d+\.\d+$/'
+jobs:
+  include:
+    - stage: deploy
+      if: branch == master && !fork
+      node_js: 'node' # pre-installed version
+      script:
+        - npm install -g semantic-release@^15
+        - semantic-release
