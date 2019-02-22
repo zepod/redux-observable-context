@@ -6,7 +6,8 @@
     "declaration": true,
     "outDir": "./lib",
     "lib": ["DOM", "esnext"],
-    "strict": true
+    "strict": true,
+    "esModuleInterop": true
   },
   "include": ["./src"],
   "exclude": ["./node_modules", "**/__tests__/*"]
