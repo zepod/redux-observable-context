@@ -1,7 +1,7 @@
 {
-  "name": "npm-package-tempalte",
-  "version": "1.0.0",
-  "description": "Initial configuration with Typescript, Jest and Travis",
+  "name": "redux-observable-context",
+  "version": "0.0.0-development",
+  "description": "Library that embeds epics within hierarchical composable contexts",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -9,14 +9,21 @@
     "test": "jest --config jestconfig.json",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "prepare" : "npm run build",
-    "prepublishOnly" : "npm test && npm run lint",
-    "preversion" : "npm run lint",
-    "version" : "npm run format && git add -A src",
-    "postversion" : "git push && git push --tags"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags",
+    "semantic-release": "semantic-release"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "npm",
+    "starter",
+    "typescript",
+    "package",
+    "travis"
+  ],
+  "author": "zepod",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^24.0.6",
@@ -25,7 +32,8 @@
     "ts-jest": "^24.0.0",
     "tslint": "^5.12.1",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.3.3"
+    "typescript": "^3.3.3",
+    "semantic-release": "^15.13.3"
   },
   "dependencies": {
     "@types/jquery": "^3.3.29"
@@ -33,6 +41,8 @@
   "files": [
     "./lib/**/*"
   ],
-  "keywords": ["npm", "starter", "typescript", "package", "travis"],
-  "author": "zepod"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zepod/redux-observable-context.git"
+  }
 }
