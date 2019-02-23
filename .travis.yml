@@ -7,7 +7,10 @@ cache: npm
 before_install:
   - npm install -g npm@latest
   - npm install -g greenkeeper-lockfile@1
-before_script: greenkeeper-lockfile-update
+  - openssl aes-256-cbc -K $encrypted_94d62c84fde4_key -iv $encrypted_94d62c84fde4_iv -in git_deploy_key.enc -out git_deploy_key -d
+
+before_script:
+  - greenkeeper-lockfile-update
 install:
   - npm install
   - npm install -g codecov
@@ -24,6 +27,7 @@ jobs:
       if: branch == master && !fork
       node_js: 'node' # pre-installed version
       script:
+        - git remote set-url origin https://zepod:$GH_TOKEN@github.com/zepod/redux-observable-context.git
         - npm install -g semantic-release@^15
         - semantic-release
 
@@ -31,3 +35,4 @@ after_script: greenkeeper-lockfile-upload
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+
