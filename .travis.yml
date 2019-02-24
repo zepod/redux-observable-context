@@ -27,6 +27,7 @@ jobs:
       if: branch == master && !fork
       node_js: 'node' # pre-installed version
       script:
+        - git remote set-url origin https://zepod:$GH_TOKEN@github.com/zepod/redux-observable-context.git
         - npm install -g semantic-release@^15
         - semantic-release
 
