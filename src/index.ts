@@ -1,4 +1,5 @@
 import {AnyAction} from "redux";
+import {Epic} from "redux-observable";
 import {Observable, of} from "rxjs";
 import {filter, mergeMap} from "rxjs/operators";
 
@@ -66,4 +67,11 @@ export class Context {
             [...this.opens, open],
             [...this.closes, close]
         )
+}
+type InContext = (open: string, close: string) =>  (epic: Epic) => Epic
+export const provideContext: InContext = (open, close) => epic => (action$, store, dependencies) => {
+    const extendedContext = !!dependencies.context
+        ? dependencies.context.extend(open, close)
+        : new Context(action$, open, close);
+    return epic(action$, store, { ...dependencies, context: extendedContext });
 }
