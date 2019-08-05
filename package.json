@@ -41,7 +41,7 @@
     "typescript": "^3.3.3"
   },
   "dependencies": {
-    "@types/jquery": "^3.3.29",
+    "@types/jquery": "^3.3.31",
     "redux-observable": "^1.0.0",
     "rxjs": "^6.4.0"
   },
