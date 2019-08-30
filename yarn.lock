@@ -243,9 +243,10 @@
   dependencies:
     "@types/sizzle" "*"
 
-"@types/node@^11.11.3":
-  version "11.11.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.11.3.tgz#7c6b0f8eaf16ae530795de2ad1b85d34bf2f5c58"
+"@types/node@^12.7.3":
+  version "12.7.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.3.tgz#27b3f40addaf2f580459fdb405222685542f907a"
+  integrity sha512-3SiLAIBkDWDg6vFo0+5YJyHPWU9uwu40Qe+v+0MH8wRKYBimHvvAOyk3EzMrD/TrIlLYfXrqDqrg913PynrMJQ==
 
 "@types/redux-mock-store@^1.0.0":
   version "1.0.0"
