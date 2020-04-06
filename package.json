@@ -31,7 +31,7 @@
     "@types/node": "^11.11.3",
     "@types/redux-mock-store": "^1.0.0",
     "jest": "^24.1.0",
-    "prettier": "^1.16.4",
+    "prettier": "^2.0.4",
     "redux-mock-store": "^1.5.3",
     "semantic-release": "^15.13.3",
     "ts-jest": "^24.0.0",
